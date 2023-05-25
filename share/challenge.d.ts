@@ -57,3 +57,36 @@ export interface Status {
   id: number
   description: string
 }
+
+// * Un test para hacer las pruebas del código (puede que de esta forma no sea valido ya que esto solo hace pruebas de I/O)
+interface Test {
+  description: string
+  input: any[]
+  expected: any
+}
+
+export interface Challenge {
+  id: string
+  title: string
+  description: string
+  tests: Test[]
+  offer: {
+    id: string
+    title: string
+    description: string
+  }
+  initialCode: string
+  language: Language
+  resolveTime: number
+}
+
+export interface UserChallenge extends Challenge {
+  id: string
+  challengeId: Challenge['id']
+  user: {
+    name: string
+    id: string
+    picture: string
+  }
+  code: string
+}
