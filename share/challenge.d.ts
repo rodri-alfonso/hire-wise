@@ -80,7 +80,7 @@ export interface Challenge {
   resolveTime: number
 }
 
-export interface UserChallenge extends Challenge {
+export interface UserChallenge {
   id: string
   challengeId: Challenge['id']
   user: {

@@ -1,9 +1,9 @@
-import React, { ReactNode } from 'react'
+import React, { HTMLProps, ReactNode } from 'react'
 
-interface Props {
-	children: ReactNode | ReactNode[]
+interface IProps extends HTMLProps<HTMLElement> {
+  children: ReactNode | ReactNode[]
 }
 
-export default function Section({ children }: Props) {
-	return <section>{children}</section>
+export default function Section ({ children, ...props }: IProps) {
+  return <section {...props}>{children}</section>
 }
